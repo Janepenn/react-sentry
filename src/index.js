@@ -7,15 +7,18 @@ import registerServiceWorker from './registerServiceWorker';
 import SentryBoundary from './SentryBoundary';
 import { release } from './release.json';
 
-Raven.config('http://2b3d4bd1dae64a15a4bd64aadd875e4a@localhost:9000/5', {
-  release: release,
-  environment: process.env.NODE_ENV,
-  // 此处可以放一些具有标志的信息，用于后期再平台在查找某一处指定问题
-  // 比如当前版本号
-  tags: {
-    version: '1.0.0',
-  },
-}).install();
+Raven.config(
+  'https://464abb2161254f8f9287bfefe42e5a7d@o483196.ingest.sentry.io/5534567',
+  {
+    release: release,
+    environment: process.env.NODE_ENV,
+    // 此处可以放一些具有标志的信息，用于后期再平台在查找某一处指定问题
+    // 比如当前版本号
+    tags: {
+      version: '1.0.0',
+    },
+  }
+).install();
 
 ReactDOM.render(
   <div>
